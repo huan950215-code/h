@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>图片无损放大工具</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="logo">🔍 Upscale</div>
+    <div class="intro">
+      <h1>图片无损放大</h1>
+      <p>上传图片，使用像素级插值实现清晰放大，并可立即下载。</p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel upload-panel">
+      <div class="panel-header">
+        <h2>1. 上传或拖拽图片</h2>
+        <p>支持 PNG / JPG / WebP，最大 20MB。</p>
+      </div>
+      <label class="dropzone" id="dropzone">
+        <input type="file" id="file-input" accept="image/*" hidden />
+        <div class="drop-hint">
+          <span class="icon">⬆️</span>
+          <p>点击选择或拖入图片</p>
+          <small id="file-info">未选择文件</small>
+        </div>
+      </label>
+    </section>
+
+    <section class="panel controls-panel">
+      <div class="panel-header">
+        <h2>2. 设置放大参数</h2>
+        <p>默认关闭平滑处理，保留像素边缘细节。</p>
+      </div>
+      <div class="controls-grid">
+        <div class="control">
+          <label for="scale-input">放大倍数</label>
+          <div class="scale-input">
+            <input type="range" id="scale-input" min="1" max="6" step="0.5" value="2" />
+            <span id="scale-value">2.0x</span>
+          </div>
+          <small>倍数越大，导出分辨率越高，处理时间越长。</small>
+        </div>
+        <div class="control toggle">
+          <div>
+            <label for="smoothing-toggle">平滑插值</label>
+            <small>关闭平滑可实现更像素风的无损放大；开启平滑则更柔和。</small>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="smoothing-toggle" />
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="actions">
+          <button id="process-btn" class="primary" disabled>开始放大</button>
+          <button id="download-btn" disabled>下载结果</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel preview-panel">
+      <div class="panel-header">
+        <h2>3. 预览与结果</h2>
+        <p id="status-text">等待上传...</p>
+      </div>
+      <div class="preview-grid">
+        <div class="preview-box">
+          <h3>原图</h3>
+          <canvas id="source-canvas" aria-label="原始图片预览"></canvas>
+          <p class="meta" id="source-meta">暂无</p>
+        </div>
+        <div class="preview-box">
+          <h3>放大后</h3>
+          <canvas id="result-canvas" aria-label="放大结果预览"></canvas>
+          <p class="meta" id="result-meta">未生成</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>使用纯前端画布处理，图片不上传服务器。</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
