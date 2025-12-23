@@ -109,8 +109,28 @@ async function upscale() {
 }
 
 function downloadImage() {
+  if (!resultCanvas.width || !resultCanvas.height) return;
+
+  const fileName = `upscale-${Date.now()}.png`;
+
+  if (resultCanvas.toBlob) {
+    resultCanvas.toBlob(
+      (blob) => {
+        if (!blob) return;
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.download = fileName;
+        link.href = url;
+        link.click();
+        setTimeout(() => URL.revokeObjectURL(url), 5000);
+      },
+      "image/png"
+    );
+    return;
+  }
+
   const link = document.createElement("a");
-  link.download = `upscale-${Date.now()}.png`;
+  link.download = fileName;
   link.href = resultCanvas.toDataURL("image/png");
   link.click();
 }
