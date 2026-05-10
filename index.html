@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="发卡网风格的虚拟商品自助购买页面，包含商品分类、订单查询、购买流程和公告模块。"
+    />
+    <title>发卡网 - 在线购买虚拟商品</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="发卡网首页">
+          <span class="brand-mark">卡</span>
+          <span>
+            <strong>发卡网</strong>
+            <small>自助下单 · 秒级发货</small>
+          </span>
+        </a>
+        <nav class="nav" aria-label="主导航">
+          <a href="#goods">商品列表</a>
+          <a href="#guide">购买流程</a>
+          <a href="#query">订单查询</a>
+          <a href="#notice">网站公告</a>
+        </nav>
+        <a class="ghost-btn" href="#query">查询订单</a>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">安全 · 稳定 · 便捷</p>
+            <h1>在线购买虚拟商品，付款后自动发卡。</h1>
+            <p class="hero-text">
+              复刻目标站点的发卡商城体验：清晰分类、库存展示、订单查询、公告提醒和醒目的购买入口，适合售卖会员、卡密、教程与数字服务。
+            </p>
+            <form class="search-panel" aria-label="搜索商品">
+              <input type="search" placeholder="输入商品名称或关键词" />
+              <button type="submit">立即搜索</button>
+            </form>
+            <div class="hero-stats" aria-label="平台数据">
+              <span><b>24h</b> 自动发货</span>
+              <span><b>3280+</b> 成功订单</span>
+              <span><b>99.9%</b> 可用率</span>
+            </div>
+          </div>
+          <aside class="order-card" id="query">
+            <div class="card-heading">
+              <span>🔎</span>
+              <div>
+                <h2>订单查询</h2>
+                <p>使用订单号或联系方式找回卡密</p>
+              </div>
+            </div>
+            <label>
+              查询方式
+              <select>
+                <option>订单编号</option>
+                <option>联系方式</option>
+                <option>邮箱地址</option>
+              </select>
+            </label>
+            <label>
+              查询内容
+              <input type="text" placeholder="请输入订单编号" />
+            </label>
+            <button class="primary-btn">查询我的订单</button>
+          </aside>
+        </section>
+
+        <section class="notice-grid" id="notice" aria-label="站点公告">
+          <article class="notice-card important">
+            <span>公告</span>
+            <h2>下单前请认真核对商品说明</h2>
+            <p>虚拟商品具有时效性，付款后系统自动发货，请保存订单号以便后续查询。</p>
+          </article>
+          <article class="notice-card">
+            <span>保障</span>
+            <h2>自动发货</h2>
+            <p>订单支付成功后进入发货队列，卡密会显示在订单详情中。</p>
+          </article>
+          <article class="notice-card">
+            <span>服务</span>
+            <h2>售后支持</h2>
+            <p>遇到库存、卡密或支付问题，可通过页面底部联系方式反馈。</p>
+          </article>
+        </section>
+
+        <section class="content-grid" id="goods">
+          <aside class="category-panel">
+            <h2>商品分类</h2>
+            <button class="category active">全部商品 <span>12</span></button>
+            <button class="category">热门会员 <span>4</span></button>
+            <button class="category">软件工具 <span>3</span></button>
+            <button class="category">学习资料 <span>3</span></button>
+            <button class="category">数字服务 <span>2</span></button>
+          </aside>
+
+          <div class="goods-area">
+            <div class="section-title">
+              <div>
+                <p class="eyebrow">Product Center</p>
+                <h2>推荐商品</h2>
+              </div>
+              <select aria-label="商品排序">
+                <option>默认排序</option>
+                <option>价格从低到高</option>
+                <option>库存优先</option>
+              </select>
+            </div>
+            <div class="product-grid">
+              <article class="product-card">
+                <span class="badge hot">热卖</span>
+                <div class="product-icon">VIP</div>
+                <h3>月度会员激活码</h3>
+                <p>自动发卡，适合个人账号续费使用。</p>
+                <div class="meta"><span>库存 268</span><span>已售 1204</span></div>
+                <div class="price-row"><strong>¥ 19.90</strong><button>购买</button></div>
+              </article>
+              <article class="product-card">
+                <span class="badge">推荐</span>
+                <div class="product-icon blue">SVIP</div>
+                <h3>季度会员兑换码</h3>
+                <p>高性价比套餐，付款后即时显示卡密。</p>
+                <div class="meta"><span>库存 86</span><span>已售 653</span></div>
+                <div class="price-row"><strong>¥ 49.00</strong><button>购买</button></div>
+              </article>
+              <article class="product-card">
+                <span class="badge green">稳定</span>
+                <div class="product-icon green">API</div>
+                <h3>接口调用套餐</h3>
+                <p>适用于轻量业务测试，包含基础额度。</p>
+                <div class="meta"><span>库存 42</span><span>已售 318</span></div>
+                <div class="price-row"><strong>¥ 29.90</strong><button>购买</button></div>
+              </article>
+              <article class="product-card">
+                <span class="badge purple">教程</span>
+                <div class="product-icon purple">DOC</div>
+                <h3>精品资料合集</h3>
+                <p>网盘链接自动发货，含更新说明。</p>
+                <div class="meta"><span>库存 999</span><span>已售 890</span></div>
+                <div class="price-row"><strong>¥ 9.90</strong><button>购买</button></div>
+              </article>
+              <article class="product-card">
+                <span class="badge orange">工具</span>
+                <div class="product-icon orange">APP</div>
+                <h3>效率工具授权</h3>
+                <p>一机一码授权，支持在线查询订单。</p>
+                <div class="meta"><span>库存 105</span><span>已售 472</span></div>
+                <div class="price-row"><strong>¥ 39.00</strong><button>购买</button></div>
+              </article>
+              <article class="product-card">
+                <span class="badge cyan">服务</span>
+                <div class="product-icon cyan">PRO</div>
+                <h3>定制数字服务</h3>
+                <p>下单后根据说明提交需求，客服跟进。</p>
+                <div class="meta"><span>库存 18</span><span>已售 96</span></div>
+                <div class="price-row"><strong>¥ 99.00</strong><button>购买</button></div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="guide" id="guide">
+          <div class="section-title centered">
+            <p class="eyebrow">How it works</p>
+            <h2>三步完成自助购买</h2>
+          </div>
+          <div class="steps">
+            <article><b>01</b><h3>选择商品</h3><p>查看商品说明、价格与库存，确认后点击购买。</p></article>
+            <article><b>02</b><h3>填写信息</h3><p>输入联系方式，便于订单查询与售后处理。</p></article>
+            <article><b>03</b><h3>支付取卡</h3><p>支付成功后自动发货，保存订单号即可随时查询。</p></article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>© 2026 发卡网 · 在线购买虚拟商品</p>
+        <p>本站为静态复刻页面，商品与价格仅作展示。</p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
